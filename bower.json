@@ -1,0 +1,11 @@
+{
+  "name": "WordpressChildTheme",
+  "authors": [
+    "Jan Drda <jdrda@outlook.com>"
+  ],
+  "description": "Child Theme",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true
+}
