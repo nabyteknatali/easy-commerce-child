@@ -13,18 +13,6 @@ function my_theme_enqueue_styles() {
     /**
      * Needed for image/select
      */
-    /*wp_enqueue_style( 'chosen', get_stylesheet_directory_uri()
-        . '/bower_components/chosen/chosen.css');
-    wp_enqueue_style( 'image-select', get_stylesheet_directory_uri()
-        . '/bower_components/image-select/src/ImageSelect.css');
-    wp_enqueue_style( 'image-select-style', get_stylesheet_directory_uri()
-        . '/bower_components/image-select/src/Flat.css');
-    wp_enqueue_script( 'chosen-jquery', get_stylesheet_directory_uri()
-        . '/bower_components/chosen/chosen.jquery.js');
-    wp_enqueue_script( 'image-select-script', get_stylesheet_directory_uri()
-        . '/bower_components/image-select/src/ImageSelect.jquery.js');
-    wp_enqueue_script( 'start-image-select', get_stylesheet_directory_uri()
-        . '/js/start-image-select.js');*/
     wp_enqueue_style( 'image-picker', get_stylesheet_directory_uri()
         . '/bower_components/image-picker/image-picker/image-picker.css');
     wp_enqueue_script( 'image-picker-script', get_stylesheet_directory_uri()
@@ -146,4 +134,6 @@ function wc_dropdown_variation_attribute_options_custom( $args = array() ) {
     echo apply_filters( 'woocommerce_dropdown_variation_attribute_options_html', $html, $args );
 }
 
-wp_enqueue_script( 'start_image_select', get_stylesheet_directory_uri() . '/js/start-image-select.js', array( 'jquery' ), '', true );
+if (!is_admin()) {
+    wp_enqueue_script('start_image_select', get_stylesheet_directory_uri() . '/js/start-image-select.js', array('jquery'), '', true);
+}
